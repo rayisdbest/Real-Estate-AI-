@@ -2,6 +2,7 @@
 
 Karachi Real Estate Hub is an end-to-end real estate intelligence platform designed to bridge the gap between raw property data and actionable market insights in the Pakistani housing market. By integrating a high-precision predictive engine directly with a responsive full-stack web interface, Karachi Real Estate Hub enables users to instantly forecast property valuations, perform complex market filtering, and manage listings in real-time. Designed to solve the issue of data opacity in the Pakistani housing sector, the project transforms unorganized market records into an administrative-grade, AI-driven valuation tool that offers unparalleled transparency for the Karachi real estate market.
 
+**NOTE** We had a previous repository that had all the commits however, we made a new one because I had asked my friend to upload everything including my work and hence it isn't possible to determine who did what. (https://github.com/zainbhumd/python-projects)
 ---
 
 ## 👥 Team & Contributions
