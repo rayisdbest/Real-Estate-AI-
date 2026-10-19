@@ -64,7 +64,7 @@ This project was built as a coordinated full-stack engineering effort:
 ## 📂 Project Architecture
 
 ```text
-📁 python-projects/              # Main Git Root Directory
+📁 Real-Estate-AI-/              # Main Git Root Directory
 │
 ├── 📁 data/                     # Structured Dataset Storage
 │   ├── Karachi property.csv
@@ -75,20 +75,23 @@ This project was built as a coordinated full-stack engineering effort:
 │   ├── main_property_model.pkl
 │   └── portions_model.pkl
 │
-├── 📁 templates/                # Web Application View Shells
-│   └── index.html               # Main Single-Page UI File
-│
-├── 📜 karachi_housing.db        # Live Local SQLite Relational Database File
-├── 📜 MAIN.py                   # Operational FastAPI Backend Application Code
-├── 📜 data_pipeline.py          # CSV Data Preparation & Scaling Script
-├── 📜 train_models.py           # Model Training & Pipeline Serialization Script
-├── 📜 build_database.py         # Relational DB Engine Migration Script
-└── 📜 README.md                 # Project Overview Documentation
+├── 📜 .gitignore
+├── 📜 MAIN(1).py                
+├── 📜 README.md
+├── 📜 activity_log.txt          
+├── 📜 build_database.py       
+├── 📜 check_pkl.py
+├── 📜 data_pipeline.py         
+├── 📜 index (1).html           
+├── 📜 karachi_housing.db       
+├── 📜 main_property_model.py          
+├── 📜 portions_model.py         
+└── 📜 requirements.txt               
 ---
 
    🚀 𝗤𝘂𝗶𝗰𝗸 𝗦𝘁𝗮𝗿𝘁
 Prerequisites: Python 3.12 and Git
-1. Clone the repository: `git clone https://github.com/zainbhumd/python-projects.git` and open the folder on VSC
+1. Clone the repository: `git clone https://github.com/rayisdbest/Real-Estate-AI-.git` and open the folder on VSC
 2. Install dependencies: `pip install -r requirements.txt`
 3. Launch the server: `uvicorn MAIN:app --reload` copy URL from the terminal and paste on your browser
 4. **Activity Logs** 
