@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 from typing import Optional
 from enum import Enum
 from sqlalchemy import create_engine, inspect
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session, declarative_base, sessionmaker
 import uvicorn
 from fastapi import Form
 import os
@@ -13,7 +13,6 @@ from dotenv import load_dotenv
 import joblib
 from sqlalchemy import Column, Integer, String, Float, DateTime
 from datetime import datetime
-from sqlalchemy.ext.declarative import declarative_base
 from fastapi.responses import FileResponse
 import pandas as pd
 from sqlalchemy import func
@@ -35,8 +34,9 @@ from fastapi import FastAPI, Depends, HTTPException
 
 # 2. Load Models
 # Ensure these files exist in a /models folder in your repo
-transformer = joblib.load("models/column_transformer.pkl")
-main_model = joblib.load("models/main_property_model.pkl")
+model_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models")
+transformer = joblib.load(os.path.join(model_dir, "column_transformer.pkl"))
+main_model = joblib.load(os.path.join(model_dir, "main_property_model.pkl"))
 
 
 app.add_middleware(
@@ -62,23 +62,11 @@ class SizeUnitEnum(str, Enum):
 
     sq_ft = "sq_ft"
 
-    class Config:
-
-        from_attributes = True
-
-
-
 class PurposeEnum(str, Enum):
 
     rent = "rent"
 
     purchase = "purchase"
-
-    class Config:
-
-        from_attributes = True
-
-
 
 class PropertyTypeEnum(str, Enum):
 
@@ -89,10 +77,6 @@ class PropertyTypeEnum(str, Enum):
     house = "house"
 
     apartment = "apartment"
-
-    class Config:
-
-        from_attributes = True
 
 # 3. Database Model
 class PropertyDB(Base):
@@ -152,7 +136,7 @@ def get_logs(db: Session = Depends(get_db)):
 
 # 5. Endpoints
 @app.get("/")
-async def home(): return FileResponse("templates/index.html")
+async def home(): return FileResponse("index.html")
 
 @app.post("/predict_price")
 def predict_price(data: AIInput):
@@ -177,8 +161,6 @@ def predict_price(data: AIInput):
     return {"predicted_price": float(prediction[0])}
 
 from fastapi import Depends
-
-from sqlalchemy.orm import Session
 
 @app.get("/properties")
 def get_properties(
