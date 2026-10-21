@@ -76,13 +76,13 @@ This project was built as a coordinated full-stack engineering effort:
 │   └── portions_model.pkl
 │
 ├── 📜 .gitignore
-├── 📜 MAIN(1).py                
+├── 📜 main.py                
 ├── 📜 README.md
 ├── 📜 activity_log.txt          
 ├── 📜 build_database.py       
 ├── 📜 check_pkl.py
 ├── 📜 data_pipeline.py         
-├── 📜 index (1).html           
+├── 📜 index.html           
 ├── 📜 karachi_housing.db       
 ├── 📜 main_property_model.py          
 ├── 📜 portions_model.py         
@@ -91,9 +91,9 @@ This project was built as a coordinated full-stack engineering effort:
 
    🚀 𝗤𝘂𝗶𝗰𝗸 𝗦𝘁𝗮𝗿𝘁
 Prerequisites: Python 3.12 and Git
-1. Clone the repository: `git clone https://github.com/rayisdbest/Real-Estate-AI-.git` and open the folder on VSC
+1. Clone the repository: `git clone https://github.com/rayisdbest/Real-Estate-AI-` and open the folder on VSC
 2. Install dependencies: `pip install -r requirements.txt`
-3. Launch the server: `uvicorn MAIN:app --reload` copy URL from the terminal and paste on your browser
+3. Launch the server: `uvicorn main:app --reload` copy URL from the terminal and paste on your browser
 4. **Activity Logs** 
 To view the application's activity history (all additions, updates, or deletions), you can access the logs directly via the API once the server is running:
 http://127.0.0.1:8000/get_logs
